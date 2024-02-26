@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ci-cd-sandbox-v3"
 description = "A dummy project to try out CI/CD routines on"
-version = "2.2.0"
+version = "2.2.1"
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
