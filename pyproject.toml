@@ -17,6 +17,7 @@ maintainers = [
     { name = "Robin Neville", email = "robin.m.neville@gmail.com" },
 ]
 license = { file = "LICENSE" }
+
 classifiers = [
     "Framework :: Pytest",
     "Development Status :: 4 - Beta",
