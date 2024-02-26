@@ -1,0 +1,76 @@
+[build-system]
+requires = [
+    "setuptools>=61.0.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ci-cd-sandbox-v3"
+description = "A dummy project to try out CI/CD routines on"
+version = "2.2.0"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "Robin Neville", email = "robin.m.neville@gmail.com" },
+]
+maintainers = [
+    { name = "Robin Neville", email = "robin.m.neville@gmail.com" },
+]
+license = { file = "LICENSE" }
+classifiers = [
+    "Framework :: Pytest",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Testing",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: MIT License",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    # core
+    # testing
+    "tox",
+    "pytest",
+    "pytest-cov",
+    # development
+    "ruff",
+    "commitizen",
+    "pre-commit",
+    # documentation
+    "mkdocs",
+    "mkdocstrings[python]",
+    "mike",
+    # build
+    "twine",
+    "build",
+]
+[project.urls]
+Repository = "https://github.com/binnev/ci-cd-sandbox-v3"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 80
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver"
+version_provider = "pep621"
+update_changelog_on_bump = true
+major_version_zero = false
+version_files = [
+    "pyproject.toml:version",
+]

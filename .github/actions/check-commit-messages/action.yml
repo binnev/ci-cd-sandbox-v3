@@ -1,0 +1,21 @@
+name: Check commit messages
+description: Check commit messages comply with commitizen
+inputs:
+  first-conventional-commit:  # id of input
+    description: The hash of the first conventional commit
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: 'pip'
+    - run: pip install commitizen
+      shell: bash
+    - name: sanity check
+      shell: bash
+      run: git rev-parse HEAD  # this is different in the cloud!
+    - name: check commits
+      shell: bash
+      run: cz check --rev-range ${{ inputs.first-conventional-commit }}..HEAD
